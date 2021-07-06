@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#main-canvas {
+    image-rendering: pixelated;
+    position: fixed;
+}
+
+.cachecanvas {
+    display: none;
+}

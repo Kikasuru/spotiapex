@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <title>SpotiApex</title>
+    <link rel="icon" href="assets/favicon.png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        window.$ = window.jQuery = require('jquery');
+
+        const lib = require("./js/lib.js");
+        const draw = require("./js/draw.js");
+        const controls = require("./js/controls.js");
+
+        const spotify = require("./js/spotify.js");
+
+        let canvas, ctx;
+
+        // Initializes cache canvases
+        function init() {
+            canvas = $("#main-canvas")[0];
+            ctx = canvas.getContext("2d");
+
+            lib.libInit();
+            draw.drawInit(ctx);
+
+            // Set the position of the window
+            $("#main-canvas").css("left", `${5}px`);
+            $("#main-canvas").css("top", `${5}px`);
+
+            setTimeout(spotify.requestAuthPromise, 1000);
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="init()">
+    <img src="assets/sprite_atlas.png" id="spr-img"  class="cachecanvas">
+    <img src="assets/background.png"   id="back-img" class="cachecanvas">
+
+    <canvas id="spr-normal"  class="cachecanvas" width = "96" height = "58"></canvas>
+    <canvas id="spr-invert"  class="cachecanvas" width = "96" height = "58"></canvas>
+    <canvas id="bck-normal"  class="cachecanvas" width ="512" height ="140"></canvas>
+
+    <canvas width = "512" height = "140" id="main-canvas"></canvas>
+</body>

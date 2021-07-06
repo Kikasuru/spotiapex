@@ -1,0 +1,23 @@
+{
+  "name": "spotiapex",
+  "version": "1.0.0",
+  "description": "A lightweight Spotify controller inspired by media players of old!",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kikasuru",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "electron": "^4.2.5"
+  },
+  "win": {
+    "icon": "./app/assets/favicon.png"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "js-pkce": "^1.1.2",
+    "spotify-web-api-node": "^5.0.2"
+  }
+}
